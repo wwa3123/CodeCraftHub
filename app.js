@@ -11,6 +11,19 @@ const app = express();
 // Server will run on port 5000
 const PORT = 5000;
 
+// Allow cross-origin requests from local frontend tools like VS Code Live Server
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  }
+
+  next();
+});
+
 // Middleware to parse JSON request bodies
 app.use(express.json());
 
