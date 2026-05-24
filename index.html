@@ -711,6 +711,10 @@
             }
         }
 
+        async function handleDelete(id) {
+            await deleteCourse(id);
+        }
+
         async function deleteCourse(id) {
             if (!confirm('Are you sure you want to delete this course?')) {
                 return;
