@@ -123,17 +123,17 @@
         }
 
         .btn-primary {
-            background: var(--primary);
+            background: #8B5CF6;
             color: white;
         }
 
         .btn-primary:hover {
-            background: var(--primary-dark);
+            background: #7C3AED;
             transform: translateY(-2px);
         }
 
         .btn-success {
-            background: var(--success);
+            background: #F59E0B;
             color: white;
         }
 
@@ -589,7 +589,7 @@
                             </div>
                             <div class="course-actions">
                                 <button class="btn btn-success btn-icon" onclick="editCourse('${course.id}')">Edit</button>
-                                <button class="btn btn-danger btn-icon" onclick="deleteCourse('${course.id}')">Remove</button>
+                                <button class="btn btn-danger btn-icon" onclick="handleDelete('${course.id}')">Remove</button>
                             </div>
                         </div>
                     `).join('')}
